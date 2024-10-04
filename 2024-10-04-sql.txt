@@ -1,0 +1,191 @@
+Query:Create dept table with id as primary key
+
+CREATE table depart
+(deptid number(5) primary key,
+deptname varchar2(20) not NULL);
+
+Query: Create table employee with details
+
+CREATE table emploi(
+empid number(5) primary key,
+empname varchar2(20) not NULL,
+salary number(7),
+joindate date,
+deptid number(5),
+foreign key (deptid) references depart(deptid) );
+
+Query: Insert a single row in Dept table
+
+insert into depart(deptid, deptname) values (1,'HR');
+
+Query: Insert multiple dept ids
+
+insert ALL
+into depart(deptid, deptname) values (2,'Acc')
+into depart(deptid, deptname) values (3,'Sale')
+into depart(deptid, deptname) values (4,'Tech')
+into depart(deptid, deptname) values (5,'Field')
+select * from DUAL;
+
+Query: Insert Multiple Employees data in employ table
+
+INSERT ALL
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (1, 'Mustafa', 54000, TO_DATE('19-02-2005', 'dd-mm-yyyy'), 1)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (2, 'Affan', 23000, TO_DATE('18-06-2008', 'dd-mm-yyyy'), 2)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (3, 'Samee', 77777, TO_DATE('07-07-2007', 'dd-mm-yyyy'), 5)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (4, 'Inzamam', 19000, TO_DATE('25-12-2003', 'dd-mm-yyyy'), 3)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (5, 'Raheem', 41003, TO_DATE('29-06-2005', 'dd-mm-yyyy'), 4)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (6, 'Junaid', 26000, TO_DATE('01-07-2006', 'dd-mm-yyyy'), 1)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (7, 'Zain', 61000, TO_DATE('28-02-2006', 'dd-mm-yyyy'), 4)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (8, 'Abdullah', 75000, TO_DATE('12-05-2005', 'dd-mm-yyyy'), 2)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (9, 'Zubeen', 50000, TO_DATE('19-09-2002', 'dd-mm-yyyy'), 5)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (10, 'Ayaan', 35000, TO_DATE('05-04-2004', 'dd-mm-yyyy'), 3)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (11, 'Abhijeet', 41000, TO_DATE('12-04-2004', 'dd-mm-yyyy'), 4)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (12, 'Arif', 56000, TO_DATE('18-07-2004', 'dd-mm-yyyy'), 5)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (13, 'Ghouse', 49000, TO_DATE('22-09-2004', 'dd-mm-yyyy'), 2)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (14, 'Chaush', 59000, TO_DATE('11-09-2004', 'dd-mm-yyyy'), 1)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (15, 'Chaand', 64000, TO_DATE('03-01-2004', 'dd-mm-yyyy'), 5)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (16, 'Ali', 28000, TO_DATE('15-02-2009', 'dd-mm-yyyy'), 1)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (17, 'Sara', 37000, TO_DATE('10-03-2010', 'dd-mm-yyyy'), 2)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (18, 'Rehan', 48000, TO_DATE('22-04-2011', 'dd-mm-yyyy'), 3)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (19, 'Hina', 33000, TO_DATE('05-05-2012', 'dd-mm-yyyy'), 4)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (20, 'Tariq', 41000, TO_DATE('15-06-2013', 'dd-mm-yyyy'), 5)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (21, 'Fahad', 62000, TO_DATE('28-07-2014', 'dd-mm-yyyy'), 1)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (22, 'Noor', 45000, TO_DATE('30-08-2015', 'dd-mm-yyyy'), 2)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (23, 'Maya', 52000, TO_DATE('01-09-2016', 'dd-mm-yyyy'), 3)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (24, 'Omer', 59000, TO_DATE('20-10-2017', 'dd-mm-yyyy'), 4)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (25, 'Lara', 43000, TO_DATE('15-11-2018', 'dd-mm-yyyy'), 5)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (26, 'Aisha', 47000, TO_DATE('20-12-2019', 'dd-mm-yyyy'), 1)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (27, 'Kamran', 51000, TO_DATE('25-01-2020', 'dd-mm-yyyy'), 2)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (28, 'Tania', 38000, TO_DATE('15-02-2021', 'dd-mm-yyyy'), 3)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (29, 'Salman', 45000, TO_DATE('10-03-2022', 'dd-mm-yyyy'), 4)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (30, 'Nida', 60000, TO_DATE('05-04-2023', 'dd-mm-yyyy'), 5)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (31, 'Zara', 35000, TO_DATE('01-05-2023', 'dd-mm-yyyy'), 1)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (32, 'Rashid', 47000, TO_DATE('15-06-2023', 'dd-mm-yyyy'), 2)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (33, 'Farah', 50000, TO_DATE('20-07-2023', 'dd-mm-yyyy'), 3)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (34, 'Asad', 48000, TO_DATE('10-08-2023', 'dd-mm-yyyy'), 4)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (35, 'Bilal', 51000, TO_DATE('30-09-2023', 'dd-mm-yyyy'), 5)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (36, 'Shazia', 46000, TO_DATE('05-10-2023', 'dd-mm-yyyy'), 1)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (37, 'Owais', 53000, TO_DATE('15-11-2023', 'dd-mm-yyyy'), 2)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (38, 'Daniyal', 54000, TO_DATE('20-12-2023', 'dd-mm-yyyy'), 3)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (39, 'Ayesha', 55000, TO_DATE('25-01-2024', 'dd-mm-yyyy'), 4)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (40, 'Zeeshan', 49000, TO_DATE('10-02-2024', 'dd-mm-yyyy'), 5)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (41, 'Kiran', 60000, TO_DATE('15-03-2024', 'dd-mm-yyyy'), 1)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (42, 'Sami', 47000, TO_DATE('20-04-2024', 'dd-mm-yyyy'), 2)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (43, 'Mansoor', 48000, TO_DATE('25-05-2024', 'dd-mm-yyyy'), 3)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (44, 'Yasmin', 46000, TO_DATE('30-06-2024', 'dd-mm-yyyy'), 4)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (45, 'Nasir', 59000, TO_DATE('10-07-2024', 'dd-mm-yyyy'), 5)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (46, 'Nashit', 52000, TO_DATE('15-08-2024', 'dd-mm-yyyy'), 1)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (47, 'Sahar', 53000, TO_DATE('20-09-2024', 'dd-mm-yyyy'), 2)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (48, 'Reema', 55000, TO_DATE('25-10-2024', 'dd-mm-yyyy'), 3)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (49, 'Misha', 56000, TO_DATE('30-11-2024', 'dd-mm-yyyy'), 4)
+    INTO emploi(empid, empname, salary, joindate, deptid) VALUES (50, 'Zainab', 60000, TO_DATE('05-12-2024', 'dd-mm-yyyy'), 5)
+SELECT * FROM DUAL;
+
+
+Query: Uses where commands to filter and show data
+
+select salary from emploi where salary<=50000;
+
+select * from emploi where empname like 'S%';
+
+select * from emploi where salary between 20000 and 60000;
+
+SELECT 'Employees with salary over 50,000 exist' AS message
+FROM dual
+WHERE EXISTS (SELECT 1 FROM emploi WHERE salary > 50000);
+
+select * from employ where empname is not null;
+
+
+Query: Add a column into table using alter commands
+
+SQL > alter table emploi add empage number(5);
+
+OUTPUT :
+
+Table altered.
+
+SQL> desc emploi
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPID                                     NOT NULL NUMBER(5)
+ EMPNAME                                   NOT NULL VARCHAR2(20)
+ SALARY                                             NUMBER(7)
+ JOINDATE                                           DATE
+ DEPTID                                             NUMBER(5)
+ EMPAGE                                             NUMBER(5)
+
+Query: Modify a column in table
+
+SQL > alter table emploi modify empage number(2);
+
+output : 
+
+Table altered.
+
+SQL> desc emploi ;
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPID                                     NOT NULL NUMBER(5)
+ EMPNAME                                   NOT NULL VARCHAR2(20)
+ SALARY                                             NUMBER(7)
+ JOINDATE                                           DATE
+ DEPTID                                             NUMBER(5)
+ EMPAGE                                             NUMBER(2)
+
+Query: Delete a column from table
+
+SQL > alter table emploi drop column empage;
+
+output:
+Table altered.
+
+SQL> desc emploi
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPID                                     NOT NULL NUMBER(5)
+ EMPNAME                                   NOT NULL VARCHAR2(20)
+ SALARY                                             NUMBER(7)
+ JOINDATE                                           DATE
+ DEPTID                                             NUMBER(5)
+
+
+Query: Create a table from another table 
+
+SQL > create table tempDept as  (select * from depart) ;
+
+SQL > create  table emp5d as select * from emploi where deptid = 5 ;
+
+
+Query: Group by data in the table in various methods
+
+SQL > select deptid, count(deptid) from emploi  group by  deptid ;
+
+SQL >  select deptid, sum(salary) as salary_sum from emploi salary_sum group by deptid;
+
+SQL >  select deptid, sum(salary) as salary_sum from emploi salary_sum group by deptid;
+
+SQL > SELECT EXTRACT(YEAR FROM JOINDATE) AS join_year, COUNT(*) AS employee_count FROM emploi WHERE JOINDATE > TO_DATE('2020-01-01', 'YYYY-MM-DD') GROUP BY EXTRACT(YEAR FROM JOINDATE);
+
+
+Query: Sort data by using having commands
+
+SQL > SELECT DEPTID, COUNT(*) AS employee_count FROM emploi GROUP BY DEPTID HAVING COUNT(*) > 3;
+
+SQL > SELECT DEPTID, AVG(SALARY) AS average_salary FROM emploi GROUP BY DEPTID HAVING AVG(SALARY) > 50000;
+
+SQL > SELECT DEPTID, AVG(SALARY) AS average_salary FROM employ GROUP BY DEPTID HAVING AVG(SALARY) < 40000 AND COUNT(*) > 2;
+
+
+
+Query: Find out which column from depart is empty and has no employees
+
+SQL > select d.deptname, d.deptid from depart d left join emploi e on d.deptid=e.deptid where e.deptid is NULL; 
+
+
+
+
+
+
