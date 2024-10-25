@@ -1,0 +1,76 @@
+create table orders(
+ord_no number(5),
+purch_amt number(10,2),
+ord_date date,
+cust_id number(5),
+sman_id number(5)
+);
+
+
+
+insert ALL
+into orders (ord_no, purch_amt, ord_date, cust_id, sman_id) values (70001, 150.5, to_date('2012-10-05','yyyy-mm-dd'), 3005, 5002)
+into orders (ord_no, purch_amt, ord_date, cust_id, sman_id) values (70009, 270.65, to_date('2012-09-10','yyyy-mm-dd'), 3001, 5005)
+into orders (ord_no, purch_amt, ord_date, cust_id, sman_id) values (70002, 65.26, to_date('2012-10-05','yyyy-mm-dd'), 3002, 5001)
+into orders (ord_no, purch_amt, ord_date, cust_id, sman_id) values (70004, 110.5, to_date('2012-08-17','yyyy-mm-dd'), 3009, 5003)
+into orders (ord_no, purch_amt, ord_date, cust_id, sman_id) values (70007, 948.5, to_date('2012-09-10','yyyy-mm-dd'), 3005, 5002)
+into orders (ord_no, purch_amt, ord_date, cust_id, sman_id) values (70005, 2400.6, to_date('2012-07-27','yyyy-mm-dd'), 3007, 5001)
+into orders (ord_no, purch_amt, ord_date, cust_id, sman_id) values (70008, 5760, to_date('2012-09-10','yyyy-mm-dd'), 3002, 5001)
+into orders (ord_no, purch_amt, ord_date, cust_id, sman_id) values (70010, 1983.43, to_date('2012-10-10','yyyy-mm-dd'), 3004, 5006)
+into orders (ord_no, purch_amt, ord_date, cust_id, sman_id) values (70003, 2840.4, to_date('2012-10-10','yyyy-mm-dd'), 3009, 5003)
+into orders (ord_no, purch_amt, ord_date, cust_id, sman_id) values (70012, 250.45, to_date('2012-06-27','yyyy-mm-dd'), 3008, 5002)
+into orders (ord_no, purch_amt, ord_date, cust_id, sman_id) values (70011, 75.29, to_date('2012-08-17','yyyy-mm-dd'), 3003, 5007)
+into orders (ord_no, purch_amt, ord_date, cust_id, sman_id) values (70013, 3045.6, to_date('2012-04-25','yyyy-mm-dd'), 3002, 5001)
+select * from DUAL;
+
+
+SELECT CUST_ID, SUM(PURCH_AMT) AS TOTAL_PURCH_AMT
+FROM orders
+GROUP BY CUST_ID
+HAVING SUM(PURCH_AMT) > 3000;
+
+
+
+CREATE TABLE customorder (
+    CUST_ID INT PRIMARY KEY,
+    CUST_NAME VARCHAR(100)
+);
+
+
+ALTER TABLE customorder
+MODIFY CUST_ID number(5);
+
+
+INSERT ALL
+    INTO customorder (CUST_ID, CUST_NAME) VALUES (3001, 'Alice Smith')
+    INTO customorder (CUST_ID, CUST_NAME) VALUES (3002, 'Bob Johnson')
+    INTO customorder (CUST_ID, CUST_NAME) VALUES (3003, 'Charlie Brown')
+    INTO customorder (CUST_ID, CUST_NAME) VALUES (3004, 'David Wilson')
+    INTO customorder (CUST_ID, CUST_NAME) VALUES (3005, 'Eve Davis')
+    INTO customorder (CUST_ID, CUST_NAME) VALUES (3006, 'Frank Miller')
+    INTO customorder (CUST_ID, CUST_NAME) VALUES (3007, 'Grace Lee')
+    INTO customorder (CUST_ID, CUST_NAME) VALUES (3008, 'Hannah Moore')
+    INTO customorder (CUST_ID, CUST_NAME) VALUES (3009, 'Ian Thompson')
+SELECT * FROM dual;
+
+
+
+CREATE TABLE salesmen (
+    SMAN_ID INT PRIMARY KEY,
+    SMAN_NAME VARCHAR(15)
+);
+
+
+
+
+INSERT ALL
+    INTO salesmen (SMAN_ID, SMAN_NAME) VALUES (5001, 'John Doe')
+    INTO salesmen (SMAN_ID, SMAN_NAME) VALUES (5002, 'Jane Doe')
+    INTO salesmen (SMAN_ID, SMAN_NAME) VALUES (5003, 'Mark Taylor')
+    INTO salesmen (SMAN_ID, SMAN_NAME) VALUES (5004, 'Nancy Adams')
+    INTO salesmen (SMAN_ID, SMAN_NAME) VALUES (5005, 'Oscar White')
+    INTO salesmen (SMAN_ID, SMAN_NAME) VALUES (5006, 'Paul Black')
+    INTO salesmen (SMAN_ID, SMAN_NAME) VALUES (5007, 'Quinn Grey')
+    INTO salesmen (SMAN_ID, SMAN_NAME) VALUES (5008, 'Rose Green')
+    INTO salesmen (SMAN_ID, SMAN_NAME) VALUES (5009, 'Sam Blue')
+SELECT * FROM dual;
