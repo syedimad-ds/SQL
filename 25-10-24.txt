@@ -74,3 +74,33 @@ INSERT ALL
     INTO salesmen (SMAN_ID, SMAN_NAME) VALUES (5008, 'Rose Green')
     INTO salesmen (SMAN_ID, SMAN_NAME) VALUES (5009, 'Sam Blue')
 SELECT * FROM dual;
+
+
+
+SELECT 
+    o.ORD_NO,
+    o.PURCH_AMT,
+    o.ORD_DATE,
+    c.CUST_NAME,
+    s.SMAN_NAME
+FROM 
+    orders o
+JOIN 
+    customorder c ON o.CUST_ID = c.CUST_ID
+JOIN 
+    salesmen s ON o.SMAN_ID = s.SMAN_ID;
+
+
+
+
+SELECT 
+    ORD_NO AS Identifier, 
+    CAST(PURCH_AMT AS VARCHAR) AS Info 
+FROM 
+    orders
+UNION ALL
+SELECT 
+    CUST_ID AS Identifier, 
+    CUST_NAME AS Info 
+FROM 
+    customorder;
